@@ -245,7 +245,6 @@ class Issue
     legacy_appeal.ssoc_dates.any? { |ssoc_date| close_date > ssoc_date }
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
   def friendly_description_for_codes(code_array)
     issue_description = code_array.reduce(Constants::ISSUE_INFO) do |levels, code|
       return nil unless levels[code]
@@ -272,7 +271,6 @@ class Issue
 
     issue_description
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 
   class << self
     def repository

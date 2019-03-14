@@ -183,7 +183,6 @@ module Caseflow::Error
       @error_code = error_code
     end
 
-    # rubocop:disable Metrics/CyclomaticComplexity
     def self.from_vbms_error(error)
       case error.body
       when /PIF is already in use/
@@ -203,7 +202,6 @@ module Caseflow::Error
         error
       end
     end
-    # rubocop:enable Metrics/CyclomaticComplexity
   end
 
   class MissingTimerMethod < StandardError; end
